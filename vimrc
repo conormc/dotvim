@@ -1,3 +1,6 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 set t_Co=256
 
 set nocompatible
@@ -168,3 +171,7 @@ colorscheme xoria256
   "nmap <Leader>a> :Tabularize /=><CR>
   "vmap <Leader>a> :Tabularize /=><CR>
 
+
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size  = 1
