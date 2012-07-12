@@ -53,7 +53,7 @@ filetype plugin on
 filetype plugin indent on
 
 syntax enable
-
+let php_sql_query=1
 
 " make xml docs tidy
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
