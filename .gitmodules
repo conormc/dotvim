@@ -45,4 +45,4 @@
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
-	url = http://github.com/msanders/snipmate.vim
+	url = https://github.com/garbas/vim-snipmate.git

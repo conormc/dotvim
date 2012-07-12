@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/conor/webstore/includes/modules/shipping'
+let g:netrw_dirhist_2='/Users/conor/.subversion'
+let g:netrw_dirhist_3='/Applications/Perfection Learning/Geometry Online.app/Contents/Resources'
+let g:netrw_dirhist_4='/Users/conor/Projects/saas.class/homework/hw.02/hw2_rottenpotatoes'
+let g:netrw_dirhist_5='/Users/conor/Downloads/winscp436'
+let g:netrw_dirhist_6='/Users/conor/pe'
+let g:netrw_dirhist_7='/Volumes/Apache2.2/htdocs/hwg'
+let g:netrw_dirhist_8='/Users/conor/Projects/saas.class/homework/hw.04/hw4_rottenpotatoes'
+let g:netrw_dirhist_9='/Users/conor/Downloads/tank_auth/application'
