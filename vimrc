@@ -72,6 +72,7 @@ command Q q
 
 noremap <C-h> :bprev<CR>
 noremap <C-l> :bnext<CR>
+noremap <C-k> <C-^>
 
 "cntrl -J to split text to right of cursor onto new line and indent
 nnoremap <C-J> i<CR><Esc>==k$
@@ -133,6 +134,8 @@ nmap <Leader>x :close<CR>
 " print date
 nmap <Leader>d :r!date "+\%Y.\%m.\%d"<CR>kdd
 nmap <Leader>cd :cd %:p:h<CR>
+
+nmap <Leader>> mq/---.*\><cr>vf>lr ^[0'q0llvf[hhr-f hr>^[0<
 
 "nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
