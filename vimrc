@@ -140,7 +140,6 @@ nmap <Leader>x :close<CR>
 nmap <Leader>d :r!date "+\%Y.\%m.\%d"<CR>kdd
 nmap <Leader>cd :cd %:p:h<CR>
 
-<<<<<<< HEAD
 nmap <Leader>vd :VCSDiff <CR>
 nmap <Leader>vc :VCSCommit <CR>
 
