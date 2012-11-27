@@ -8,7 +8,7 @@ set ruler
 set number
 set autoindent
 set shiftwidth=4
-set nowrap 
+set nowrap
 set textwidth=79
 set formatoptions=qrn1
 
@@ -39,9 +39,9 @@ set smartcase           " no ignorecase if Uppercase char present
 set visualbell t_vb=    " turn off error beep/flash
 set novisualbell        " turn off visual bell
 
-set backspace=indent,eol,start  " make that backspace key work the way it 
+set backspace=indent,eol,start  " make that backspace key work the way it
 
-"  space bar centers screen on current line, 
+"  space bar centers screen on current line,
 " also center screen when jumping to next / prev search term
 nmap <space> zz
 nmap n nzz
@@ -80,7 +80,7 @@ nnoremap <C-J> i<CR><Esc>==k$
 " line numbers
 highlight LineNr ctermfg=grey ctermbg=black
 
-" perl like regex searches 
+" perl like regex searches
 nnoremap / /\v
 vnoremap / /\v
 
@@ -89,7 +89,7 @@ nnoremap <C-i> :set hls!<CR>
 " use global substitute by default ie, s/all/thethings/g
 set gdefault
 
-" Disable arrow key nav, 
+" Disable arrow key nav,
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -126,8 +126,11 @@ set cursorcolumn
 set cursorline
 "
 hi CursorLine   ctermbg=white ctermbg=lightblue
-hi CursorColumn ctermbg=white ctermbg=lightblue 
+hi CursorColumn ctermbg=white ctermbg=lightblue
 nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
+
+nmap <leader>js :!python -m json.tool<CR>
+
 
 nmap <Leader>n :NERDTreeToggle<CR>
 nmap <Leader>x :close<CR>
@@ -135,7 +138,11 @@ nmap <Leader>x :close<CR>
 nmap <Leader>d :r!date "+\%Y.\%m.\%d"<CR>kdd
 nmap <Leader>cd :cd %:p:h<CR>
 
+"um... what?
 nmap <Leader>> mq/---.*\><cr>vf>lr ^[0'q0llvf[hhr-f hr>^[0<
+
+" select put text, via http://stackoverflow.com/a/4775281/955926
+nnoremap <expr> gV "`[".getregtype(v:register)[0]."`]"
 
 "nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
@@ -179,4 +186,26 @@ colorscheme xoria256
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size  = 1
 
+" Strips the trailing whitespace from a file
+" http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespaces()<CR>
+
+"highligh trailing whitespace
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
+
+
 source ~/.vim/dbconnections
+
