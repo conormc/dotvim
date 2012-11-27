@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/conor/.vim/.git'
 let g:netrw_dirhist_2='/Users/conor/Downloads/tank_auth/application'
+let g:netrw_dirhist_3='scp://conorm@kineticbooks.com//www/alghwstaging/'
+let g:netrw_dirhist_4='/usr/home/conorm/orphans'
+let g:netrw_dirhist_5='scp://conorm@kineticbooks.com//www/alghwstaging/'
