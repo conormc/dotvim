@@ -14,6 +14,8 @@ set formatoptions=qrn1
 
 set laststatus=2
 let g:Powerline_symbols = 'unicode'
+" disable php auto folding
+let g:DisableAutoPHPFolding = 1
 
 
 set diffopt=filler
@@ -135,6 +137,12 @@ nmap <Leader>x :close<CR>
 nmap <Leader>d :r!date "+\%Y.\%m.\%d"<CR>kdd
 nmap <Leader>cd :cd %:p:h<CR>
 
+nmap <Leader>vd :VCSDiff <CR>
+nmap <Leader>vc :VCSCommit <CR>
+
+nmap <leader>pu :wa\|!phpunit %<cr>
+
+
 nmap <Leader>> mq/---.*\><cr>vf>lr ^[0'q0llvf[hhr-f hr>^[0<
 
 "nnoremap <F8> :setl noai nocin nosi inde=<CR>
@@ -165,6 +173,13 @@ endif
 
 set background=dark        " adapt colors for background
 colorscheme xoria256
+
+
+let g:syntastic_auto_jump=1
+let g:syntastic_mode_map = { 'mode': 'passive'}
+
+noremap <leader>sc :SyntasticCheck<cr>
+
 
 
   "nmap <Leader>a= :Tabularize /= <CR>
