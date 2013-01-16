@@ -44,12 +44,14 @@ set novisualbell        " turn off visual bell
 set backspace=indent,eol,start  " make that backspace key work the way it
 
 "  space bar centers screen on current line,
-" also center screen when jumping to next / prev search term
+" also center screen when jumping to next / prev search term;
 nmap <space> zz
 nmap n nzz
 nmap N Nzz
 
 imap jk <Esc>
+imap ;; <Esc>A;<Esc>j^
+nmap ;; <Esc>A;<Esc>j^
 
 filetype plugin on
 filetype plugin indent on
@@ -131,6 +133,7 @@ hi CursorLine   ctermbg=white ctermbg=lightblue
 hi CursorColumn ctermbg=white ctermbg=lightblue
 nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 
+" format json files for reading
 nmap <leader>js :!python -m json.tool<CR>
 
 
@@ -144,6 +147,9 @@ nmap <Leader>vd :VCSDiff <CR>
 nmap <Leader>vc :VCSCommit <CR>
 
 nmap <leader>pu :wa\|!phpunit %<cr>
+
+nmap <leader>u yypVr-==k$hljlDk0w
+nmap <leader>U yypVr===k$hljlDk0w
 
 
 
@@ -185,17 +191,6 @@ let g:syntastic_mode_map = { 'mode': 'passive'}
 
 noremap <leader>sc :SyntasticCheck<cr>
 
-
-
-  "nmap <Leader>a= :Tabularize /= <CR>
-  "vmap <Leader>a= :Tabularize /= <CR>
-  "nmap <Leader>a: :Tabularize /:\zs<CR>
-  "vmap <Leader>a: :Tabularize /:\zs<CR>
-  "nmap <Leader>a> :Tabularize /=><CR>
-  "vmap <Leader>a> :Tabularize /=><CR>
-
-
-
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size  = 1
 
@@ -218,7 +213,6 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespaces()<CR>
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 highlight EOLWS ctermbg=red guibg=red
-
 
 source ~/.vim/dbconnections
 
