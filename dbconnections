@@ -1,1 +1,8 @@
-" blank
+function Problem_edit_test_connect()
+    DBSetOption type=PGSQL
+    DBSetOption user=postgres
+    DBSetOption host=marias
+    DBSetOption passwd=Kbooks08
+    DBSetOption dbname=problem_edit_test
+    DBSetOption AutoCommit=0
+endfunction

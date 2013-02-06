@@ -44,10 +44,24 @@ set novisualbell        " turn off visual bell
 set backspace=indent,eol,start  " make that backspace key work the way it
 
 "  space bar centers screen on current line,
-" also center screen when jumping to next / prev search term;
-nmap <space> zz
+" also center screen when jumping to next / prev search term
+"nmap <space> zz
+let g:EasyMotion_mapping_w = '<Space>'
+let g:EasyMotion_mapping_b = '<leader><Space>'
+
 nmap n nzz
 nmap N Nzz
+nmap <enter> o<esc>
+" shift enter remapped to Ω in iterm config
+" otherwise shift enter is 
+nmap Ω O<esc>
+
+
+
+
+
+
+
 
 imap jk <Esc>
 imap ;; <Esc>A;<Esc>j^
@@ -134,7 +148,7 @@ hi CursorColumn ctermbg=white ctermbg=lightblue
 nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 
 " format json files for reading
-nmap <leader>js :!python -m json.tool<CR>
+vmap <leader>js :!python -m json.tool<CR>
 
 
 nmap <Leader>n :NERDTreeToggle<CR>
@@ -207,7 +221,7 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespaces()<CR>
+nmap <silent> <leader><leader><space> :call <SID>StripTrailingWhitespaces()<CR>
 
 "highligh trailing whitespace
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/

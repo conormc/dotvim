@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/conor/.vim/.git'
 let g:netrw_dirhist_2='/Users/conor/Downloads/tank_auth/application'
 let g:netrw_dirhist_3='scp://conorm@kineticbooks.com//www/alghwstaging/'
 let g:netrw_dirhist_4='/usr/home/conorm/orphans'
 let g:netrw_dirhist_5='scp://conorm@kineticbooks.com//www/alghwstaging/'
+let g:netrw_dirhist_6='/Users/conor/kbooks/projects/ohw_2013'
+let g:netrw_dirhist_7='/Users/conor/kbooks/projects'
+let g:netrw_dirhist_8='/Users/conor/Downloads/codeguy-Slim-7092c69'
+let g:netrw_dirhist_9='/Users/conor/kbooks/projects/move_problems'
