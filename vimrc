@@ -45,11 +45,20 @@ set backspace=indent,eol,start  " make that backspace key work the way it
 
 "  space bar centers screen on current line,
 " also center screen when jumping to next / prev search term
-nmap <space> zz
+"nmap <space> zz
+let g:EasyMotion_mapping_w = '<Space>'
+let g:EasyMotion_mapping_b = '<leader><Space>'
+
 nmap n nzz
 nmap N Nzz
+nmap <enter> o<esc>
+" shift enter remapped to Ω in iterm config
+" otherwise shift enter is 
+nmap Ω O<esc>
 
 imap jk <Esc>
+imap ;; <Esc>A;<Esc>j^
+nmap ;; <Esc>A;<Esc>j^
 
 filetype plugin on
 filetype plugin indent on
@@ -131,7 +140,8 @@ hi CursorLine   ctermbg=white ctermbg=lightblue
 hi CursorColumn ctermbg=white ctermbg=lightblue
 nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 
-nmap <leader>js :!python -m json.tool<CR>
+" format json files for reading
+vmap <leader>js :!python -m json.tool<CR>
 
 
 nmap <Leader>n :NERDTreeToggle<CR>
@@ -140,10 +150,13 @@ nmap <Leader>x :close<CR>
 nmap <Leader>d :r!date "+\%Y.\%m.\%d"<CR>kdd
 nmap <Leader>cd :cd %:p:h<CR>
 
-nmap <Leader>vd :VCSDiff <CR>
+nmap <Leader>vd :VCSVimDiff <CR>
 nmap <Leader>vc :VCSCommit <CR>
 
 nmap <leader>pu :wa\|!phpunit %<cr>
+
+nmap <leader>u yypVr-==k$hljlDk0w
+nmap <leader>U yypVr===k$hljlDk0w
 
 
 
@@ -185,17 +198,6 @@ let g:syntastic_mode_map = { 'mode': 'passive'}
 
 noremap <leader>sc :SyntasticCheck<cr>
 
-
-
-  "nmap <Leader>a= :Tabularize /= <CR>
-  "vmap <Leader>a= :Tabularize /= <CR>
-  "nmap <Leader>a: :Tabularize /:\zs<CR>
-  "vmap <Leader>a: :Tabularize /:\zs<CR>
-  "nmap <Leader>a> :Tabularize /=><CR>
-  "vmap <Leader>a> :Tabularize /=><CR>
-
-
-
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size  = 1
 
@@ -212,13 +214,12 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespaces()<CR>
+nmap <silent> <leader><leader><space> :call <SID>StripTrailingWhitespaces()<CR>
 
 "highligh trailing whitespace
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 highlight EOLWS ctermbg=red guibg=red
-
 
 source ~/.vim/dbconnections
 
