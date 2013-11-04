@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/conor/Books/Zora Neale Hurston'
 let g:netrw_dirhist_2='/Users/conor/.oh-my-zsh'
@@ -6,3 +7,8 @@ let g:netrw_dirhist_3='/Users/conor/Projects/pics/data'
 let g:netrw_dirhist_4='/Volumes/NO NAME'
 let g:netrw_dirhist_5='/Users/conor/Projects/geofflun/v2/app'
 let g:netrw_dirhist_6='/Users/conor/Projects/geofflun/v2/templates'
+=======
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/usr/local/www/htdocs/hw/sql'
+let g:netrw_dirhist_2='/usr/local/www/htdocs/svn_marias_hwg'
+>>>>>>> 59393f77078c13c327aa86e9b7679e1fa4071f0c
