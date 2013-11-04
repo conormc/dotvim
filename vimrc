@@ -22,9 +22,12 @@ set textwidth=79
 set formatoptions=qrn1
 
 set laststatus=2
-let g:Powerline_symbols = 'unicode'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
+let g:airline_section_b = '%{$USER}@%{hostname()}:%{getcwd()}'
+let g:airline_section_c = '%t'
+ 
 " disable php auto folding
 let g:DisableAutoPHPFolding = 1
 
