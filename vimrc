@@ -1,7 +1,16 @@
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 
 set t_Co=256
+
+function! CursorPing()
+    set cursorline cursorcolumn
+    redraw
+    sleep 50m
+    set nocursorline nocursorcolumn
+endfunction
+
+nmap <C-p> :call CursorPing()<CR>
 
 set nocompatible
 set ruler
@@ -56,16 +65,11 @@ nmap <enter> o<esc>
 " otherwise shift enter is 
 nmap Ω O<esc>
 
-
-
-
-
-
-
+"http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html
+"Fixing Vim’s indenting of HTML files
+autocmd FileType html setlocal indentkeys-=*<Return>
 
 imap jk <Esc>
-imap ;; <Esc>A;<Esc>j^
-nmap ;; <Esc>A;<Esc>j^
 
 filetype plugin on
 filetype plugin indent on
