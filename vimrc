@@ -23,6 +23,8 @@ set formatoptions=qrn1
 
 set laststatus=2
 let g:Powerline_symbols = 'unicode'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 " disable php auto folding
 let g:DisableAutoPHPFolding = 1
 
